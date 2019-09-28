@@ -1,0 +1,89 @@
+#include <iostream>
+
+#include<string>
+
+#include<math.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    string a;
+
+    string b="";
+
+    string c="abcdefghijklmnopqrstuvwxyz";
+
+    string d="";
+
+    int n;
+
+    int p=(n/26)+1;
+
+    cout<<"please enter a user key for the encryption"<<endl;
+
+    cin>>n;
+
+    cout<<"please enter a string to encrypt"<<endl;
+
+    cin>>a;
+
+    for(int i=0;i<a.length();i++)
+
+    {
+        
+for(int j=0;j<c.length();j++)
+
+        {
+            
+if(a[i]==c[j])
+            
+{
+               
+ b=b+c[((j+n)%26)];
+
+                
+            }
+
+            
+        }
+  
+      
+    }
+
+    cout<<"encrypted string is "<<endl;
+
+    cout<<b<<endl;
+    
+
+for(int i=0;i<b.length();i++)
+
+{
+    
+for(int j=0;j<c.length();j++)
+
+    {
+
+        if(b[i]==c[j])
+ 
+       {
+  
+          d=d+c[((j-n+p*26)%26)];
+
+            
+        }
+        
+   
+ }
+
+    
+}
+
+cout<<"decrypted string is"<<endl;
+
+cout<<d;
+    
+
+}
